@@ -6,10 +6,13 @@ var gulp        = require('gulp')
   , reload      = browserSync.reload;
 
 gulp.task('nodemon', function(cb) {
-  return plugins.nodemon({
+  var called = false;
+
+  plugins.nodemon({
     script: './build/backend/app.js'
   }).on('start', function () {
-    cb();
+    if (!called) { cb(); }
+    called = true;
   });
 });
 
@@ -52,6 +55,13 @@ gulp.task('app', function() {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('root', function() {
+  utils.log(utils.colors.black.bgGreen('Root'));
+
+  gulp.src(paths.src.root)
+    .pipe(gulp.dest(paths.build.root));
+});
+
 gulp.task('b-s', ['nodemon'], function() {
   browserSync.init(null, {
     files: ['./build/frontend/**/*'],
@@ -62,6 +72,7 @@ gulp.task('b-s', ['nodemon'], function() {
   gulp.watch(paths.src.vendorjs, ['vendorjs']);
   gulp.watch(paths.src.app, ['app']);
   gulp.watch(paths.src.appjs, ['appjs']);
+  gulp.watch(paths.src.backend, ['backend']);
 });
 
-gulp.task('default', ['backend', 'vendorjs', 'app', 'appjs', 'b-s']);
+gulp.task('default', ['backend', 'vendorjs', 'app', 'appjs', 'root', 'b-s']);

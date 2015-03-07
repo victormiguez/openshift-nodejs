@@ -7,11 +7,13 @@
     ],
     "app": "frontend/**/*",
     "appjs": "frontend/**/*.js",
-    "backend": "backend/app.js"
+    "backend": "backend/**/*.js",
+    "root": "package.json"
   },
   "build": {
     "vendorjs": "./build/frontend/scripts/vendor/",    
     "app": "./build/frontend/",
-    "backend": "./build/backend/"
+    "backend": "./build/backend/",
+    "root": "./build/"
   }
 }
