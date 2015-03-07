@@ -18,6 +18,8 @@ exports.obterTodas = function(req, res) {
 
     return res.json(demandas);
   });
+
+  //Demanda.remove({}).exec();
 };
 
 exports.inserir = function(req, res) {
@@ -35,7 +37,7 @@ exports.importar = function(req, res) {
   var url_parts = url.parse(req.url, true);
   var query = url_parts.query;
 
-  var obj = JSON.parse(fs.readFileSync('' + query.arquivo, 'utf8'));
+  var obj = JSON.parse(fs.readFileSync('E:\\Projetos\\dadosabertos\\dados\\' + query.arquivo, 'utf8'));
 
   for (var i = 0; i < obj.length; i++) {
     
