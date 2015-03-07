@@ -63,10 +63,11 @@ gulp.task('root', function() {
 });
 
 gulp.task('b-s', ['nodemon'], function() {
-  browserSync.init(null, {
+  browserSync({
     files: ['./build/frontend/**/*'],
     port: 3000,
-    open: false
+    open: false,
+    ghostMode: false
   });
 
   gulp.watch(paths.src.vendorjs, ['vendorjs']);
