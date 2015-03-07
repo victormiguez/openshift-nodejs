@@ -1,3 +1,9 @@
+ language: node_js
+ node_js:
+   - "0.10"
+   - "0.8"
+   - "0.6"
+
 after_success:
   - chmod 600 .travis/travis.txt.enc
   - ssh-add .travis/travis.txt.enc
