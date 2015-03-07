@@ -31,3 +31,5 @@ node_modules
 
 build
 bower_components
+
+travis.txt

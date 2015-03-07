@@ -1,0 +1,5 @@
+after_success:
+  - chmod 600 .travis/travis.txt.enc
+  - ssh-add .travis/travis.txt.enc
+  - git remote add deploy eric@revoada.net.br:~/dadosabertos.git
+  - git push deploy
