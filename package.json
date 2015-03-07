@@ -13,5 +13,17 @@
     "jade": "~1.9.2",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.2.1",
+    "chalk": "^1.0.0",
+    "dateformat": "^1.0.11",
+    "gulp": "^3.8.11",
+    "gulp-changed": "^1.1.1",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-load-utils": "0.0.4",
+    "gulp-ng-annotate": "^0.5.2",
+    "gulp-nodemon": "^1.0.5",
+    "gulp-util": "^3.0.3"
   }
 }

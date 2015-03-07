@@ -5,11 +5,13 @@
       "bower_components/angular-route/angular-route.min.js",
       "bower_components/jquery/dist/jquery.min.js"
     ],
-    "app": "frontend/**/*"  
+    "app": "frontend/**/*",
+    "appjs": "frontend/**/*.js",
+    "backend": "backend/app.js"
   },
-
   "build": {
     "vendorjs": "./build/frontend/scripts/vendor/",    
-    "app": "./build/"
+    "app": "./build/frontend/",
+    "backend": "./build/backend/"
   }
 }
