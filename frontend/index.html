@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html data-ng-app="app" data-ng-strict-di>
+  <head>
+    <meta charset="utf-8" />
+    <base href="/">
+    <title data-ng-bind="title"></title>
+  </head>
+
+  <body>
+    
+    
+    <script src="/scripts/vendor/jquery.min.js"></script>
+    <script src="/scripts/vendor/angular.min.js"></script>
+    <script src="/scripts/vendor/angular-route.min.js"></script>
+
+    <!-- Bootstrapping -->
+    <script src="/app/app.module.js"></script>
+
+    <!-- Reusable Blocks/Modules -->
+    <script src="/app/blocks/router/router.module.js"></script>
+    <script src="/app/blocks/router/routehelper.js"></script>
+
+    <!-- core module -->
+    <script src="/app/core/core.module.js"></script>
+    <script src="/app/core/config.js"></script>
+  </body>
+</html>
