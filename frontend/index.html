@@ -1,31 +1,159 @@
 <!DOCTYPE html>
-<html data-ng-app="app" data-ng-strict-di>
-  <head>
-    <meta charset="utf-8" />
-    <base href="/">
-    <title data-ng-bind="title"></title>
-  </head>
+<html class="no-js" data-ng-app="app" data-ng-strict-di>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <base href="/">
+        <title data-ng-bind="title"></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="content/css/style.css">
+    </head>
+    <body>
 
-  <body>
-    <p>:)</p>
-    
-    <script src="/scripts/vendor/jquery.min.js"></script>
-    <script src="/scripts/vendor/angular.min.js"></script>
-    <script src="/scripts/vendor/angular-route.min.js"></script>
+      <header id="ferramenta" class="header">
+        <div class="header-content">
+          <h1 class="orcamento-logo">
+            Orçamento<br>
+            <span class="orcamento-logo-subtitle">Participativo</span>
+          </h1>
 
-    <!-- Bootstrapping -->
-    <script src="/app/app.module.js"></script>
+          <div class="nav-container">
+            <nav class="nav">
+              <ul class="nav-list">
+                <li class="nav-list-item"><a href="#ferramenta" class="nav-link">A ferramenta</a></li>
+                <li class="nav-list-item"><a href="#foruns" class="nav-link">Fóruns</a></li>
+                <li class="nav-list-item"><a href="#demandas" class="nav-link">Demandas</a></li>
+              </ul>
+            </nav>
+          </div>
+          
 
-    <!-- Reusable Blocks/Modules -->
-    <script src="/app/blocks/router/router.module.js"></script>
-    <script src="/app/blocks/router/routehelper.js"></script>
+          <div class="orcamento-text-container">
+            <h2 class="orcamento-subtitle">
+             Orçamento Participativo de Campinas
+            </h2>
+            <p class="orcamento-descricao">
+              Acompanhe aqui as demandas do Orçamento Participativo da sua região e do seu tema de interesse.
+              Esta ferramenta auxilia o cidadão em consultas, fiscalização e acompanhamento das demandas do OP.
+            </p>
+          </div>
+          
+        </div>
+       
+      </header>
 
-    <!-- core module -->
-    <script src="/app/core/core.module.js"></script>
-    <script src="/app/core/config.js"></script>
+      <section id="foruns" class="administracoes-regionais-container">
 
-    <script type='text/javascript' id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.2.2.2.js'><\/script>".replace("HOST", location.hostname));
-//]]></script>
-  </body>
+        <div class="regionais-content">
+          <h2 class="administracoes-regionais-title">Fóruns</h2>
+
+          <p class="orcamento-descricao">Instâncias de participação dos membros do OP sobre as demandas da sociedade civil. Podem ser regionais (distribuídas em Administrações Regionais e Distritos) ou temáticos (meio ambiente, transporte, educação, cultura, etc).</p>  
+          
+        </div>
+      </section>
+
+      <section class="mapa">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7354.904983615392!2d-47.08866758465577!3d-22.82274276116823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c6cda09b6b9b%3A0x2e6baad018aa93e3!2sBarao+Geraldo%2C+Campinas+-+SP!5e0!3m2!1spt-BR!2sbr!4v1425750364376" width="100%" height="600" frameborder="0" style="border:0"></iframe>
+      </section>
+
+      <section id="demandas" class="demandas-container">
+
+        <div class="demandas-content">
+          <h3 class="demandas-orcamento-title">Demandas</h3>
+          <p class="demandas-orcamento-subtitle">
+            O Orçamento Participativo é uma ferramenta de gestão pública que proporciona a participação da sociedade civil nas decisões de gastos públicos. 
+Anualmente os fóruns internos do OP elegem demandas prioritárias para cada região e tema no município.
+          </p>
+
+          <div class="filtro-container">
+
+            <p class="faca-sua-pesquisa">Faça sua pesquisa</p>
+            
+            <select name="" id="" class="filtro-ano">
+              <option value="">2001</option>
+              <option value="">2002</option>
+              <option value="">2003</option>
+            </select>
+
+            <select name="" id="" class="filtro-protocolo">
+              <option value="">0001</option>
+              <option value="">0002</option>
+              <option value="">0002</option>
+            </select>
+
+            <select name="" id="" class="filtro-tema">
+              <option value="">a</option>
+              <option value="">b</option>
+              <option value="">c</option>
+            </select>
+
+            <select name="" id="" class="filtro-regiao">
+              <option value="">a</option>
+              <option value="">b</option>
+              <option value="">c</option>
+            </select>
+
+            <select name="" id="" class="filtro-bairro">
+              <option value="">a</option>
+              <option value="">b</option>
+              <option value="">c</option>
+            </select>
+
+            <input type="text" class="filtro-demanda" placeholder="Demanda">
+
+            <button class="filtro-buscar">Buscar</button>
+
+          </div>
+
+          <table class="tabela-orcamento">
+            <thead class="tabela-orcamento-title">
+              <th>Lorem 1</th>
+              <th>Lorem 1</th>
+              <th>Lorem 1</th>
+              <th>Lorem 1</th>
+            </thead>
+            <tr>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+            </tr> 
+          </table>
+        </div>
+        
+      </section>
+
+      <footer class="footer">
+        <div class="footer-content">
+         <p>Orçamento Participativo desenvolvido pelo grupo de dados abertos de Campinas <br>
+          </p>
+          <div class="participantes-links-container">
+            <a class="participante-link" href="http://www.campinasquequeremos.org/">Campinas que Queremos</a> – <a class="participante-link" href="http://minhacampinas.org.br">Minha Campinas</a> - <a class="participante-link" href="http://www.nina.org.br/">Nina</a> - <a class="participante-link" href="http://www.princiweb.com.br">Princi web</a> – <a class="participante-link" href="http://revoada.net.br/">Revoada</a>
+          </div>
+        </div>
+      </footer>
+      
+      <script src="/scripts/vendor/jquery.min.js"></script>
+      <script src="/scripts/vendor/angular.min.js"></script>
+      <script src="/scripts/vendor/angular-route.min.js"></script>
+
+      <!-- Bootstrapping -->
+      <script src="/app/app.module.js"></script>
+
+      <!-- Reusable Blocks/Modules -->
+      <script src="/app/blocks/router/router.module.js"></script>
+      <script src="/app/blocks/router/routehelper.js"></script>
+
+      <!-- core module -->
+      <script src="/app/core/core.module.js"></script>
+      <script src="/app/core/config.js"></script>
+
+      <script type='text/javascript' id="__bs_script__">//<![CDATA[
+      document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.2.2.2.js'><\/script>".replace("HOST", location.hostname));
+  //]]></script>
+
+       
+    </body>
 </html>

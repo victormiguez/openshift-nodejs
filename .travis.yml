@@ -1,11 +1,9 @@
- language: node_js
- node_js:
-   - "0.10"
-   - "0.8"
-   - "0.6"
-
-after_success:
-  - chmod 600 .travis/travis.txt.enc
-  - ssh-add .travis/travis.txt.enc
-  - git remote add deploy eric@revoada.net.br:~/dadosabertos.git
-  - git push deploy
+deploy:
+  provider: openshift
+  user: victorcineis@gmail.com
+  password:
+    secure: IIi7x0sWXI7vgus1XW4miGauxQ+u7to4kLQR/KB/Ez0NPbgh2j34H0xgqhJhs9r51dDAGyf7rMssgULluT6hM7Us5O3QSoPHcGNpc+mOEuDdiLXXTDsdeUhU8Kl7v/pYV6vYWt1IQolG8x1WQLynO3VS5J7imIhSqZ6DdPH/CZc=
+  app: dadosabertos
+  domain: dadosabertos-campinas.rhcloud.com
+  on:
+    repo: Revoada/dadosabertos
