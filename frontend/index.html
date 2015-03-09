@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="no-js" data-ng-app="app" data-ng-strict-di>
+<html class="no-js" data-ng-app="app">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
         <base href="/">
-        <title data-ng-bind="title"></title>
+        <title>Dados abertos - Orçamento participativo</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
@@ -58,7 +58,7 @@
          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7354.904983615392!2d-47.08866758465577!3d-22.82274276116823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c6cda09b6b9b%3A0x2e6baad018aa93e3!2sBarao+Geraldo%2C+Campinas+-+SP!5e0!3m2!1spt-BR!2sbr!4v1425750364376" width="100%" height="600" frameborder="0" style="border:0"></iframe>
       </section>
 
-      <section id="demandas" class="demandas-container">
+      <section id="demandas" class="demandas-container" data-ng-controller="Demandas">
 
         <div class="demandas-content">
           <h3 class="demandas-orcamento-title">Demandas</h3>
@@ -70,55 +70,47 @@ Anualmente os fóruns internos do OP elegem demandas prioritárias para cada reg
           <div class="filtro-container">
 
             <p class="faca-sua-pesquisa">Faça sua pesquisa</p>
-            
-            <select name="" id="" class="filtro-ano">
-              <option value="">2001</option>
-              <option value="">2002</option>
-              <option value="">2003</option>
+
+            <select name="" id="" class="filtro-ano" 
+              data-ng-model="demanda.anoCriacao">
+              <option value="">Ano</option>
+              <option 
+              data-ng-repeat="demanda in demandas | unique:'anoCriacao'"
+              value="{{demanda.anoCriacao}}">{{demanda.anoCriacao}}</option>
             </select>
 
-            <select name="" id="" class="filtro-protocolo">
-              <option value="">0001</option>
-              <option value="">0002</option>
-              <option value="">0002</option>
+            <select name="" id="" class="filtro-protocolo" 
+              data-ng-model="demanda.protocolo">
+              <option value="">Protocolo</option>
+              <option 
+              data-ng-repeat="demanda in demandas | unique:'protocolo'"
+              value="{{demanda.protocolo}}">{{demanda.protocolo}}</option>
             </select>
 
-            <select name="" id="" class="filtro-tema">
-              <option value="">a</option>
-              <option value="">b</option>
-              <option value="">c</option>
+            <select name="" id="" class="filtro-tema" 
+              data-ng-model="demanda.tema">
+              <option value="">Tema</option>
+              <option 
+              data-ng-repeat="demanda in demandas | unique:'tema'"
+              value="{{demanda.tema}}">{{demanda.tema}}</option>
             </select>
 
-            <select name="" id="" class="filtro-regiao">
-              <option value="">a</option>
-              <option value="">b</option>
-              <option value="">c</option>
-            </select>
-
-            <select name="" id="" class="filtro-bairro">
-              <option value="">a</option>
-              <option value="">b</option>
-              <option value="">c</option>
-            </select>
-
-            <input type="text" class="filtro-demanda" placeholder="Demanda">
-
-            <button class="filtro-buscar">Buscar</button>
+            <input type="text" class="filtro-demanda" placeholder="Demanda" data-ng-model="demanda.demanda">
 
           </div>
 
           <table class="tabela-orcamento">
             <thead class="tabela-orcamento-title">
-              <th>Lorem 1</th>
-              <th>Lorem 1</th>
-              <th>Lorem 1</th>
-              <th>Lorem 1</th>
+              <th>Ano</th>
+              <th>Protocolo</th>
+              <th>Tema</th>
+              <th>Demanda</th>
             </thead>
-            <tr>
-              <td>Lorem ipsum</td>
-              <td>Lorem ipsum</td>
-              <td>Lorem ipsum</td>
-              <td>Lorem ipsum</td>
+            <tr ng-repeat="demanda in demandas | filter:demanda.anoCriacao | filter:demanda.protocolo | filter:demanda.tema | filter:demanda.demanda">
+              <td>{{demanda.anoCriacao}}</td>
+              <td>{{demanda.protocolo}}</td>
+              <td>{{demanda.tema}}</td>
+              <td>{{demanda.demanda}}</td>
             </tr> 
           </table>
         </div>
@@ -134,22 +126,26 @@ Anualmente os fóruns internos do OP elegem demandas prioritárias para cada reg
           </div>
         </div>
       </footer>
-      
+
       <script src="/scripts/vendor/jquery.min.js"></script>
       <script src="/scripts/vendor/angular.min.js"></script>
       <script src="/scripts/vendor/angular-route.min.js"></script>
 
       <!-- Bootstrapping -->
       <script src="/app/app.module.js"></script>
+      
+      <!-- Shared -->
+      <script src="/app/shared/unique.filter.js"></script>
 
-      <!-- Reusable Blocks/Modules -->
-      <script src="/app/blocks/router/router.module.js"></script>
-      <script src="/app/blocks/router/routehelper.js"></script>
-
-      <!-- core module -->
-      <script src="/app/core/core.module.js"></script>
-      <script src="/app/core/config.js"></script>
-
+      <!-- Demandas -->
+      <script src="/app/demandas/demandas.module.js"></script>
+      <script src="/app/demandas/demandas.data.js"></script>
+      <script src="/app/demandas/demandas.js"></script>
+      
+      <!-- Routes -->
+      <script src="/app/routes/routes.module.js"></script>
+      <script src="/app/routes/routes.js"></script>
+      
       <script type='text/javascript' id="__bs_script__">//<![CDATA[
       document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.2.2.2.js'><\/script>".replace("HOST", location.hostname));
   //]]></script>
