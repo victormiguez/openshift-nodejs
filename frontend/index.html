@@ -1,155 +1,156 @@
 <!DOCTYPE html>
 <html class="no-js" data-ng-app="app">
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta charset="utf-8">
-        <base href="/">
-        <title>Dados abertos - Orçamento participativo</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="content/css/style.css">
-    </head>
-    <body>
-
-      <header id="ferramenta" class="header">
-        <div class="header-content">
-          <h1 class="orcamento-logo">
-            Orçamento<br>
-            <span class="orcamento-logo-subtitle">Participativo</span>
-          </h1>
-
-          <div class="nav-container">
-            <nav class="nav">
-              <ul class="nav-list">
-                <li class="nav-list-item"><a href="#ferramenta" class="nav-link">A ferramenta</a></li>
-                <li class="nav-list-item"><a href="#foruns" class="nav-link">Fóruns</a></li>
-                <li class="nav-list-item"><a href="#demandas" class="nav-link">Demandas</a></li>
-              </ul>
-            </nav>
-          </div>
-          
-
-          <div class="orcamento-text-container">
-            <h2 class="orcamento-subtitle">
-             Orçamento Participativo de Campinas
-            </h2>
-            <p class="orcamento-descricao">
-              Acompanhe aqui as demandas do Orçamento Participativo da sua região e do seu tema de interesse.
-              Esta ferramenta auxilia o cidadão em consultas, fiscalização e acompanhamento das demandas do OP.
-            </p>
-          </div>
-          
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <base href="/">
+    <title>Dados abertos - Orçamento participativo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="content/css/style.css">
+  </head>
+  <body data-ng-controller="Demandas">
+    <header id="ferramenta" class="header">
+      <div class="header-content">
+        <h1 class="orcamento-logo">
+          Orçamento<br>
+          <span class="orcamento-logo-subtitle">Participativo</span>
+        </h1>
+        <div class="nav-container">
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-list-item"><a href="#ferramenta" class="nav-link">A ferramenta</a></li>
+              <li class="nav-list-item"><a href="#foruns" class="nav-link">Fóruns</a></li>
+              <li class="nav-list-item"><a href="#demandas" class="nav-link">Demandas</a></li>
+            </ul>
+          </nav>
         </div>
-       
-      </header>
-
-      <section id="foruns" class="administracoes-regionais-container">
-
-        <div class="regionais-content">
-          <h2 class="administracoes-regionais-title">Fóruns</h2>
-
-          <p class="orcamento-descricao">Instâncias de participação dos membros do OP sobre as demandas da sociedade civil. Podem ser regionais (distribuídas em Administrações Regionais e Distritos) ou temáticos (meio ambiente, transporte, educação, cultura, etc).</p>  
-          
-        </div>
-      </section>
-
-      <section class="mapa">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7354.904983615392!2d-47.08866758465577!3d-22.82274276116823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c6cda09b6b9b%3A0x2e6baad018aa93e3!2sBarao+Geraldo%2C+Campinas+-+SP!5e0!3m2!1spt-BR!2sbr!4v1425750364376" width="100%" height="600" frameborder="0" style="border:0"></iframe>
-      </section>
-
-      <section id="demandas" class="demandas-container" data-ng-controller="Demandas">
-
-        <div class="demandas-content">
-          <h3 class="demandas-orcamento-title">Demandas</h3>
-          <p class="demandas-orcamento-subtitle">
-            O Orçamento Participativo é uma ferramenta de gestão pública que proporciona a participação da sociedade civil nas decisões de gastos públicos. 
-Anualmente os fóruns internos do OP elegem demandas prioritárias para cada região e tema no município.
+        <div class="orcamento-text-container">
+          <h2 class="orcamento-subtitle">
+            Orçamento Participativo de Campinas
+          </h2>
+          <p class="orcamento-descricao">
+            Acompanhe aqui as demandas do Orçamento Participativo da sua região e do seu tema de interesse.
+            Esta ferramenta auxilia o cidadão em consultas, fiscalização e acompanhamento das demandas do OP.
           </p>
-
-          <div class="filtro-container">
-
-            <p class="faca-sua-pesquisa">Faça sua pesquisa</p>
-
-            <select name="" id="" class="filtro-ano" 
-              data-ng-model="demanda.anoCriacao">
-              <option value="">Ano</option>
-              <option 
+        </div>
+      </div>
+    </header>
+    <section id="foruns" class="administracoes-regionais-container">
+      <div class="regionais-content">
+        <h2 class="administracoes-regionais-title">Fóruns</h2>
+        <p class="orcamento-descricao">Instâncias de participação dos membros do OP sobre as demandas da sociedade civil. Podem ser regionais (distribuídas em Administrações Regionais e Distritos) ou temáticos (meio ambiente, transporte, educação, cultura, etc).</p>
+      </div>
+    </section>
+    
+    <div class="mapa">
+      <img src="http://campinas.sp.gov.br/img/servicos-publicos/Macroregiao/mapa.jpg" usemap="#map1" alt="Mapa">
+      <map name="map1">
+        <area shape="poly" coords="340,18,323,23,295,21,279,17,270,18,271,24,268,29,268,37,259,35,250,42,250,46,242,44,237,46,222,55,226,61,228,73,238,76,239,80,238,84,242,93,232,107,232,122,220,126,213,135,205,135,192,128,177,135,173,142,169,149,162,144,154,143,142,138,142,149,148,164,148,171,154,183,148,190,144,204,146,210,141,218,153,232,152,248,146,251,151,268,142,282,137,294,147,301,164,306,182,312,185,298,204,298,215,297,225,298,244,323,246,326,253,319,262,320,254,308,256,294,262,297,270,298,274,304,284,304,281,298,274,291,284,290,293,274,288,266,286,251,282,239,278,223,274,211,270,202,277,203,288,200,301,199,306,197,318,200,329,200,339,182,336,175,332,167,336,144,338,128,342,111,352,90,354,63,355,47,360,26" ng-click="atualizarDemandas('norte')" alt="Norte" title="Norte">
+        <area shape="poly" coords="27,311,32,310,37,313,44,303,53,303,54,309,58,311,65,317,70,314,76,315,93,313,104,309,110,309,115,315,127,306,138,296,148,303,169,309,182,312,185,299,207,299,224,297,229,303,238,315,233,320,221,325,212,329,214,336,214,345,207,343,198,348,200,360,199,386,202,391,188,395,175,392,159,387,142,388,131,396,117,408,107,414,90,413,78,405,67,403,59,401,54,391,49,387,45,383,53,383,59,379,64,377,72,378,81,370,80,365,85,362,82,357,86,356,84,351,83,339,78,337,72,338,35,331,21,319,19,310" ng-click="atualizarDemandas('noroeste')" alt="Noroeste" title="Noroeste">
+        <area shape="poly" coords="84,458,62,458,55,461,45,466,42,472,47,477,54,482,60,483,61,490,69,494,78,500,80,506,92,509,95,507,104,512,107,508,116,503,123,508,135,510,136,507,142,511,143,516,150,515,154,525,160,518,164,527,166,539,171,547,184,534,189,525,198,516,214,482,227,446,233,421,238,406,242,393,247,383,249,366,252,358,245,351,244,345,249,340,246,331,246,326,238,316,230,322,213,329,214,345,206,344,199,348,200,366,201,383,202,391,190,395,176,392,163,388,151,388,138,390,127,399,114,410,103,414,92,415,82,407,69,403,61,403,83,426,88,435,81,441,80,450,84,458" ng-click="atualizarDemandas('sudoeste')" title="Sudoeste">
+        <area shape="poly" coords="317,540,314,529,308,522,304,513,298,510,296,500,283,500,280,484,277,478,280,471,288,467,286,457,291,449,294,440,306,441,323,423,328,419,337,417,341,408,345,406,352,399,352,390,355,385,351,383,354,376,363,376,369,362,377,354,394,349,395,345,376,326,372,314,364,297,357,293,342,298,348,304,342,308,336,309,324,308,315,312,304,314,296,309,280,305,269,297,257,294,254,306,258,315,261,320,254,318,247,324,246,332,250,340,244,345,245,352,252,358,249,370,247,385,238,404,231,427,224,454,215,480,205,502,197,517,186,529,177,541,171,546,176,553,183,543,192,548,191,543,195,545,201,549,204,554,209,549,218,549,226,555,233,550,235,544,245,544,250,542,261,547,272,542,279,542,285,536,301,536" ng-click="atualizarDemandas('sul')" title="Sul">
+        <area shape="poly" coords="665,269,657,257,648,246,642,249,640,258,632,261,624,258,613,252,613,241,617,236,614,226,603,222,603,213,599,208,601,199,598,195,602,187,597,185,595,171,590,179,587,176,584,171,586,158,576,158,567,163,562,159,556,162,550,151,546,142,546,135,547,126,538,116,536,106,527,104,534,93,537,90,534,85,535,76,529,73,529,69,477,37,474,30,466,27,458,20,449,16,443,23,439,27,443,37,438,41,417,34,403,33,390,29,379,32,375,28,368,23,362,27,357,44,355,57,355,70,354,85,344,109,340,125,338,141,334,158,333,167,340,182,333,197,343,199,356,200,359,206,350,215,356,226,357,232,359,238,361,243,362,248,364,252,365,255,359,231,370,262,362,242,366,259,359,254,365,249,363,256,367,260,371,270,366,255,366,260,368,263,372,272,376,279,385,283,382,287,387,291,395,291,406,293,415,294,421,298,427,300,439,299,446,308,456,307,458,303,466,306,466,311,476,318,479,325,481,334,486,338,495,335,505,340,507,333,515,333,530,330,534,335,541,332,540,340,548,343,554,342,559,345,562,342,575,340,572,335,560,330,560,325,552,316,555,309,564,301,572,301,579,296,586,288,595,287,602,300,610,299,613,294,623,294,626,300,632,296,643,301,648,296,655,292,661,287,667,283" ng-click="atualizarDemandas('leste')" title="Leste">
+        <area shape="poly" coords="273,204,305,199,324,203,333,199,343,202,352,201,356,206,348,213,361,249,358,254,364,258,376,283,381,283,382,290,417,297,403,315,401,327,402,334,396,343,377,327,361,292,343,297,346,304,333,307,325,307,306,312,296,307,283,305,286,303,275,291,283,290,295,278,290,266" ng-click="atualizarDemandas('centro')" title="Centro">
+      </map>
+    </div>
+    
+    <section id="demandas" class="demandas-container">
+      <div class="demandas-content">
+        <h3 class="demandas-orcamento-title">Demandas</h3>
+        <p class="demandas-orcamento-subtitle">
+          O Orçamento Participativo é uma ferramenta de gestão pública que proporciona a participação da sociedade civil nas decisões de gastos públicos. 
+          Anualmente os fóruns internos do OP elegem demandas prioritárias para cada região e tema no município.
+        </p>
+        <div class="filtro-container">
+          <p class="faca-sua-pesquisa">Faça sua pesquisa</p>
+          <select name="" id="" class="filtro-ano" 
+            data-ng-model="filters['anoCriacao']">
+            <option value="">Ano</option>
+            <option 
               data-ng-repeat="demanda in demandas | unique:'anoCriacao'"
               value="{{demanda.anoCriacao}}">{{demanda.anoCriacao}}</option>
-            </select>
+          </select>
+          
+          <select name="" id="" class="filtro-ano" 
+            data-ng-model="filters['forum']">
+            <option value="">Fórum do OP</option>
+            <option 
+              data-ng-repeat="demanda in demandas | unique:'forum'"
+              value="{{demanda.forum}}">{{demanda.forum}}</option>
+          </select>
 
-            <select name="" id="" class="filtro-protocolo" 
-              data-ng-model="demanda.protocolo">
-              <option value="">Protocolo</option>
-              <option 
+          <select name="" id="" class="filtro-protocolo" 
+            data-ng-model="filters['protocolo']">
+            <option value="">Protocolo</option>
+            <option 
               data-ng-repeat="demanda in demandas | unique:'protocolo'"
               value="{{demanda.protocolo}}">{{demanda.protocolo}}</option>
-            </select>
-
-            <select name="" id="" class="filtro-tema" 
-              data-ng-model="demanda.tema">
-              <option value="">Tema</option>
-              <option 
+          </select>
+          <select name="" id="" class="filtro-tema" 
+            data-ng-model="filters['tema']">
+            <option value="">Tema</option>
+            <option 
               data-ng-repeat="demanda in demandas | unique:'tema'"
               value="{{demanda.tema}}">{{demanda.tema}}</option>
-            </select>
-
-            <input type="text" class="filtro-demanda" placeholder="Demanda" data-ng-model="demanda.demanda">
-
-          </div>
-
-          <table class="tabela-orcamento">
-            <thead class="tabela-orcamento-title">
-              <th>Ano</th>
-              <th>Protocolo</th>
-              <th>Tema</th>
-              <th>Demanda</th>
-            </thead>
-            <tr ng-repeat="demanda in demandas | filter:demanda.anoCriacao | filter:demanda.protocolo | filter:demanda.tema | filter:demanda.demanda">
-              <td>{{demanda.anoCriacao}}</td>
-              <td>{{demanda.protocolo}}</td>
-              <td>{{demanda.tema}}</td>
-              <td>{{demanda.demanda}}</td>
-            </tr> 
-          </table>
+          </select>
+          <input type="text" class="filtro-demanda" placeholder="Demanda" data-ng-model="filters['demanda']">
+          <br><br>
+          <button ng-click="limparFiltro()">Limpar filtro</button>
         </div>
-        
-      </section>
 
-      <footer class="footer">
-        <div class="footer-content">
-         <p>Orçamento Participativo desenvolvido pelo grupo de dados abertos de Campinas <br>
-          </p>
-          <div class="participantes-links-container">
-            <a class="participante-link" href="http://www.campinasquequeremos.org/">Campinas que Queremos</a> – <a class="participante-link" href="http://minhacampinas.org.br">Minha Campinas</a> - <a class="participante-link" href="http://www.nina.org.br/">Nina</a> - <a class="participante-link" href="http://www.princiweb.com.br">Princi web</a> – <a class="participante-link" href="http://revoada.net.br/">Revoada</a>
-          </div>
+        <table class="tabela-orcamento" ng-if="demandas">
+          <thead class="tabela-orcamento-title">
+            <th>Ano</th>
+            <th>Fórum</th>
+            <th>Protocolo</th>
+            <th>Tema</th>
+            <th>Demanda</th>
+          </thead>
+          <tr ng-repeat="demanda in demandas | filter:{anoCriacao:filters.anoCriacao} | regiao:filters.regiao | filter:{forum:filters.forum} | filter:{protocolo:filters.protocolo} | filter:{tema:filters.tema} | filter:{demanda:filters.demanda}">
+            <td>{{demanda.anoCriacao}}</td>
+            <td>{{demanda.forum}}</td>
+            <td>{{demanda.protocolo}}</td>
+            <td>{{demanda.tema}}</td>
+            <td>{{demanda.demanda}}</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    
+    <section id="sobre" class="sobre">
+      <h3 class="demandas-orcamento-title">Sobre</h3>
+      <p class="demandas-orcamento-subtitle">Este é o primeiro trabalho do PROJETO DADOS ABERTOS CAMPINAS cujos objetivos são: Incentivar a transparência do Poder Público por meio da divulgação de dados sempre atualizados; e, promover seu uso pros cidadãos.</p>
+      <p class="demandas-orcamento-subtitle">O site foi desenvolvido durante o PRIMEIRO HACK DAY CIDADÃO de Campinas. Trata-se de um trabalho voluntário coletivo de cidadãos envolvidos com a Transparência e o Controle Social visando a melhora da qualidade de vida em Campinas.</p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Orçamento Participativo desenvolvido pelo PROJETO DADOS ABERTOS CAMPINAS <br>
+        </p>
+        <div class="participantes-links-container">
+          <a class="participante-link" href="http://www.campinasquequeremos.org/">Campinas que Queremos</a> – <a class="participante-link" href="http://minhacampinas.org.br">Minha Campinas</a> - <a class="participante-link" href="http://www.nina.org.br/">Nina</a> - <a class="participante-link" href="http://www.princiweb.com.br">Princi web</a> – <a class="participante-link" href="http://revoada.net.br/">Revoada</a>
         </div>
-      </footer>
-
-      <script src="/scripts/vendor/jquery.min.js"></script>
-      <script src="/scripts/vendor/angular.min.js"></script>
-      <script src="/scripts/vendor/angular-route.min.js"></script>
-
-      <!-- Bootstrapping -->
-      <script src="/app/app.module.js"></script>
-      
-      <!-- Shared -->
-      <script src="/app/shared/unique.filter.js"></script>
-
-      <!-- Demandas -->
-      <script src="/app/demandas/demandas.module.js"></script>
-      <script src="/app/demandas/demandas.data.js"></script>
-      <script src="/app/demandas/demandas.js"></script>
-      
-      <!-- Routes -->
-      <script src="/app/routes/routes.module.js"></script>
-      <script src="/app/routes/routes.js"></script>
-      
-      <script type='text/javascript' id="__bs_script__">//<![CDATA[
+      </div>
+    </footer>
+    <script src="/scripts/vendor/jquery.min.js"></script>
+    <script src="/scripts/vendor/angular.min.js"></script>
+    <script src="/scripts/vendor/angular-route.min.js"></script>
+    <!-- Bootstrapping -->
+    <script src="/app/app.module.js"></script>
+    <!-- Shared -->
+    <script src="/app/shared/unique.filter.js"></script>
+    <!-- Demandas -->
+    <script src="/app/demandas/demandas.module.js"></script>
+    <script src="/app/demandas/demandas.data.js"></script>
+    <script src="/app/demandas/demandas.js"></script>
+    <!-- Routes -->
+    <script src="/app/routes/routes.module.js"></script>
+    <script src="/app/routes/routes.js"></script>
+    <script type='text/javascript' id="__bs_script__">//<![CDATA[
       document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.2.2.2.js'><\/script>".replace("HOST", location.hostname));
-  //]]></script>
-
-       
-    </body>
+      //]]>
+    </script>
+  </body>
 </html>

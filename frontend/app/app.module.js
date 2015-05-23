@@ -4,7 +4,7 @@
 
   angular.module('app', [
     'ngRoute',
-    'ui.unique',
+    'ui.filters',
     'app.demandas',
     'app.routes'
   ]);

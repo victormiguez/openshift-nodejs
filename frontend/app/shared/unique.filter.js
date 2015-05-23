@@ -1,10 +1,8 @@
-// Angular UI unique filter - https://github.com/angular-ui/ui-utils/blob/master/modules/unique/unique.js
-
 (function() {
   'use strict';
 
   angular
-    .module('ui.unique',[])
+    .module('ui.filters',[])
     .filter('unique', ['$parse', function ($parse) {
 
     return function (items, filterOn) {
@@ -39,6 +37,29 @@
       }
       return items;
     };
-  }]);
+  }])
+    .filter('regiao', function() {
+      return function(itens, foruns) {
+        var retorno = [];
+
+        if (foruns.length == 0)
+          return itens;
+
+        for (var i = 0; i < itens.length; i++) {
+
+          console.log(itens[i])
+
+          if (foruns.indexOf(itens[i].forum) > -1) {
+            retorno.push(itens[i]);
+          }
+
+        };
+
+        console.log(retorno)
+
+        return retorno;
+      }
+            
+    });
     
 }());
