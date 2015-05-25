@@ -1,14 +1,10 @@
-language: node_js
-node_js:
-  - "0.12"
-  - "0.10"
-
+script: true
 deploy:
   provider: openshift
   user: victorcineis@gmail.com
   password:
-    secure: IIi7x0sWXI7vgus1XW4miGauxQ+u7to4kLQR/KB/Ez0NPbgh2j34H0xgqhJhs9r51dDAGyf7rMssgULluT6hM7Us5O3QSoPHcGNpc+mOEuDdiLXXTDsdeUhU8Kl7v/pYV6vYWt1IQolG8x1WQLynO3VS5J7imIhSqZ6DdPH/CZc=
+    secure: JAPdFT2drlXefYFflWa86xfBCvx29t+BP311qJJ6NE7hPqLRzDxN54QDuQQQPrKtTFWoPI4K+10ABzUsADp6Zi4ghK5dzLjV1cWezyxVpQtqcxHhIsykm4iuxsZAH6oKYpPG6dAc/CR3Z8I2OowcHVzCd/lbzLkDSzbGzk16qDbe0XH/FyyGqnmZeRYTzbnO6IHAWeZFjLYqz7qK5aDc4kV7DcKx/+15GlrqGTUCr7d8SQwnU90FXkE9caq/ApJbpoqsrIO9BNkygodeldEuTR8HqnJMi78ty37ll1qmrXn/7e5LuEQvSZf272V035OS+FJ7AXph5yPlyWgX/uiwxb0+6ShhS5dz0BGKC5hdLDvWVYxZCvjlFSIgHgbHQYblyFyqlFhSvB9LWHOOh67Oox1bbP9w1aG1vVpzyFHy2sFnkDMAt6f9k1liYzdYXyrqoFLfHQT0sJlFv8FhPY6Ab2+nmUhXo1yNZJ/7HOEgho8mCeb6Od+cnFiOwFJ6aC1Psx1111XxJi1CG3hvnYyAGLrIurkCaowJMXwzpZkujbqV3fxFP1gSJ8TvWtooT3Im0pk/wtgyCkW+MiXfFXFd7/JJiiQpO+A073H29osLauvwcwTJy0ESC459LfbxI9jUXdws88cHb2h/GI40j/cSFAi4iynF421cYuXG7hhPPEA=
   app: dadosabertos
-  domain: dadosabertos-campinas.rhcloud.com
+  domain: campinas
   on:
     repo: Revoada/dadosabertos
