@@ -20,6 +20,7 @@ api.demanda = require('./api/demanda');
 
 app.post('/api/demanda', api.demanda.inserir);
 app.get('/api/demandas', api.demanda.obterTodas);
+app.get('/api/importar', api.demanda.importar);
 
 app.get('*',function(req,res){
   res.sendFile(assetsPath + "/");
