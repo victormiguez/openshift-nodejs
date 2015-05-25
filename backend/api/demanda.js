@@ -19,7 +19,7 @@ exports.obterTodas = function(req, res) {
     return res.json(demandas);
   });
 
-  //Demanda.remove({}).exec();
+//  Demanda.remove({}).exec();
 };
 
 exports.inserir = function(req, res) {
@@ -38,7 +38,7 @@ exports.importar = function(req, res) {
   var query = url_parts.query;
 
   var obj = JSON.parse(fs.readFileSync('E:\\Projetos\\dadosabertos\\dados\\' + query.arquivo, 'utf8'));
-
+  
   for (var i = 0; i < obj.length; i++) {
     
     var demanda = new Demanda({
@@ -53,9 +53,10 @@ exports.importar = function(req, res) {
       valor: obj[i]['Valor'],
       demanda: obj[i]['Demanda']
     });
-
-    demanda.save();
-
+    
+    if ((!isNaN(parseInt(obj[i]['Protocolo'])) || obj[i]['Protocolo'] == '') && typeof(obj[i]['Ano da criação']) !== 'undefined') {
+      demanda.save();
+    } 
   };
 
   return res.json(':)');
