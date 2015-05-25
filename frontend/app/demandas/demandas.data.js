@@ -6,7 +6,7 @@
     .factory('dataDemandas', dataDemandas);
 
   function dataDemandas($http){
-    var urlBase = 'http://localhost:3000/api/';
+    var urlBase = '/api/';
     var demandas = {};
 
     demandas.todas = function() {
