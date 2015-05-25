@@ -33,5 +33,4 @@ build
 bower_components
 
 travis.txt
-
-dados
+dados/

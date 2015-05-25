@@ -8,12 +8,17 @@
     "app": "frontend/**/*",
     "appjs": "frontend/**/*.js",
     "backend": "backend/**/*.js",
+    "img": "src/shared/ui/img/*",
+    "stylus": "frontend/content/stylus/*.styl",
+    "stylus_watch": "src/shared/ui/stylus/**/*",
     "root": "package.json"
   },
   "build": {
-    "vendorjs": "./build/frontend/scripts/vendor/",    
+    "vendorjs": "./build/frontend/scripts/vendor/",
     "app": "./build/frontend/",
     "backend": "./build/backend/",
+    "img": "./build/frontend/content/ui/img/",
+    "stylus": "./build/frontend/content/css/",
     "root": "./build/"
   }
 }

@@ -1,6 +1,12 @@
-(function () {
+(function() {
+
   'use strict';
 
-  angular.module('app');
+  angular.module('app', [
+    'ngRoute',
+    'ui.filters',
+    'app.demandas',
+    'app.routes'
+  ]);
 
-}());
+})();
