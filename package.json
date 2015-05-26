@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./backend/app.js",
-    "install": "bower install"
+    "start": "node ./backend/app.js"
   },
   "main": "./backend/app.js",
   "dependencies": {
