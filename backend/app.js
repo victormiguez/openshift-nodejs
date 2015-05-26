@@ -4,7 +4,7 @@ var path      = require('path');
 var mongoose  = require('mongoose');
 var bodyParser = require('body-parser');
 
-mongoose.connect($HACKDAY_DATABASE);
+mongoose.connect(process.env.HACKDAY_DATABASE);
 
 var assetsPath = path.join(__dirname, '..', 'frontend');
 
