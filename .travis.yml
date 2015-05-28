@@ -4,6 +4,7 @@ before_script:
   - npm install
   - bower install
   - gulp build
+  - cd build
 
 script: true
 
